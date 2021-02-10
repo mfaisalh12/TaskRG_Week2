@@ -1,0 +1,28 @@
+<%- include('./partials/head.ejs') %>
+  <%- include('./partials/nav.ejs') %>
+
+    <div class="container mt-5 mb-5">
+      <div class="card p-4">
+        <div class="card-body">
+          <h1 class="text-center">Data Absen Mahasiswa</h1>
+
+          <form action="/absens" method="POST">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" name="nama">
+            </div>
+            <div class="mb-3">
+              <label for="noabesn" class="form-label">Nomor Absen</label>
+              <input type="text" class="form-control" id="noabsen" name="noabsen">
+            </div>
+            <div class="mb-3">
+              <label for="kelas" class="form-label">Kelas</label>
+              <input type="text" class="form-control" id="kelas" name="kelas">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>

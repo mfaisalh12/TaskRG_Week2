@@ -1,0 +1,38 @@
+<%- include('./partials/head.ejs') %>
+  <%- include('./partials/nav.ejs') %>
+    <div class="card m-auto mt-5" style=" width: 60rem;">
+      <table class="table table-hover">
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">No.Absen</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Kelas</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <% absens.forEach(absen=> { %>
+          <tbody>
+            <tr>
+              <th scope="row">
+                <%= absen.noabsen %>
+              </th>
+              <td>
+                <%= absen.nama %>
+              </td>
+              <td>
+                <%= absen.kelas %>
+              </td>
+              <td>
+                <form action="/<%= absen.id %>?_method=DELETE" method="POST">
+                  <button type="submit" class="btn btn-danger">
+                    Delete
+                  </button>
+                </form>
+            </tr>
+            <% })%>
+          </tbody>
+      </table>
+
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
